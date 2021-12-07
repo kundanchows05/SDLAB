@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-box practice</title>
+    <style>
+        .container {
+            background-repeat: no-repeat;
+            border: 3px dotted lightgrey;
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* align-content: center; */
+            height: 90vh;
+            flex-wrap: wrap;
+
+        }
+        .boxes{
+            width: 200px;
+            height: 200px;
+            margin: 15px;
+            background-color: gold;
+            border: 3px solid lightgrey;
+            flex-grow: 1;
+        }
+        .box-one{
+            background-color: dodgerblue;
+            flex-grow: 2;
+        }
+            
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boxes box-one">A</div>
+        <div class="boxes">B</div>
+        <div class="boxes">C</div>
+        <div class="boxes">D</div>
+        <div class="boxes">E</div>
+        <div class="boxes">F</div>
+        
+    </div>
+</body>
+</html>

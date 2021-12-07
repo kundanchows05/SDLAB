@@ -1,0 +1,15 @@
+p{
+    float:left;
+    width: 500px;
+}
+.highlight {
+    background-color: gold;
+    width: 500px;
+    padding: auto;
+  }
+  .highlight2 {
+    background-color: chocolate;
+    width: 500px;
+    padding: auto;
+  }
+  

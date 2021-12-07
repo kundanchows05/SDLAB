@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tables practice</title>
+    <style>	
+    table,tr{
+        border: 1px solid #c4dcf3;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+    table{
+        margin: 20px;
+
+    }
+    tr:nth-child(odd){
+        background-color: #eef7ff;
+    }
+    td{
+        padding: 10px;
+    }
+    th,tfoot{
+        
+        background-color: #427fef;
+        color: white;
+        padding: 10px;
+    }
+    tfoot {
+        text-align: left;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>OrderID</th>
+                <th>Order Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>USA</td>
+                <td>1000</td>
+                <td>$1,300</td>
+               
+
+            </tr>
+            <tr>
+                <td>USA</td>
+                <td>1001</td>
+                <td>$700</td>
+                
+            </tr>
+            <tr>
+                <td>CA</td>
+                <td>1002</td>
+                <td>$2,000</td>
+                
+            </tr>
+            <tr>
+                <td>CA</td>
+                <td>1003</td>
+                <td>$1,000</td>
+                
+            </tr>
+        </tbody>
+        <tfoot>
+            <th colspan="2">Total</th>
+            <th>$5,000</th>
+        </tfoot>
+</table>
+</body>
+</html>

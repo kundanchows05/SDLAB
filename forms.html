@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forms2</title>
+    <style>
+      body {
+        padding: 10px 10px;
+      }
+      div {
+        margin: 3px;
+      }
+      input {
+        margin-bottom: 10px;
+        border: 1px solid dodgerblue;
+        border-radius: 5px;
+        padding: 5px 7px;
+      }
+      input:focus {
+        border: 2px solid royalblue;
+        outline: 0;
+      }
+      button {
+        margin: 0px 10px 0 5px;
+        border: 0;
+        border-radius: 5px;
+        background-color: royalblue;
+        padding: 5px 7px;
+        color: white;
+      }
+      button:hover {
+        background-color: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="https://formspree.io/f/xbjqaabw " method="POST">
+      <div><label for="name">Name</label></div>
+      <div><input id="name" type="text" /></div>
+      <div><label for="email">Email</label></div>
+      <div><input id="email" type="email" /></div>
+      <button type="submit">Register</button>
+      <button type="reset">Clear</button>
+    </form>
+  </body>
+</html>

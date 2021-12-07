@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+
+    <title>gallery</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template: repeat(8, 200px) / repeat(1, 350px);
+        justify-items: flex-start;
+      }
+      .images {
+        width: 96%;
+        height: 96%;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      @media screen and (min-width: 768px) {
+        .container {
+          display: grid;
+          grid-template: repeat(5, 200px) / repeat(2, 350px);
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .container {
+          display: grid;
+          grid-template: repeat(4, 200px) / repeat(3, 500px);
+        }
+        .image-two {
+          grid-column: 2/4;
+          grid-row: 1/3;
+          width: 98%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img class="images" src="../IMAGES/image1.jpg" alt="images1" />
+      <img class="images image-two" src="../IMAGES/image2.jfif" alt="images2" />
+      <img class="images" src="../IMAGES/image3.jfif" alt="images3" />
+      <img class="images" src="../IMAGES/image4.jfif" alt="images4" />
+      <img class="images" src="../IMAGES/image1.jpg" alt="images5" />
+      <img class="images" src="../IMAGES/image5.jfif" alt="images6" />
+      <img class="images" src="../IMAGES/image6.jfif" alt="images7" />
+      <img class="images" src="../IMAGES/image7.jfif" alt="images8" />
+      <img class="images" src="../IMAGES/image8.jfif" alt="images9" />
+    </div>
+  </body>
+</html>
