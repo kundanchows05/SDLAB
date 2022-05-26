@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app>
+
+  <head>
+    <script data-require="angular.js@1.0.7" data-semver="1.0.7" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+    <script src="calc.js"></script>
+    <style>
+      .result{
+        margin-left: 10px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Simple calculator</h1>
+    <div ng-controller="CalculatorCtrl">
+      <table>
+        <tr>
+          <td>a =</td>
+          <td><input ng-model="a"></td>
+        </tr>
+        <tr>
+          <td>b =</td>
+          <td><input ng-model="b"></td>
+          </tr>
+        <tr>
+          <td>operation:</td>
+          <td>
+            <select ng-model="operation">
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <b class="result">{{na()}} {{operation}} {{nb()}} = {{calculate()}}</b>
+    </div>
+  </body>
+
+</html>
+
+
+<!--  -->
+
+function CalculatorCtrl($scope) {
+  
+  $scope.a = 0;
+  $scope.b = 0;
+  $scope.operation = '+';
+  
+  $scope.na = function() {
+    return $scope.a - 0;
+  }
+  
+  $scope.nb = function() {
+    return $scope.b - 0;
+  }
+
+  $scope.calculate = function() {
+    if($scope.operation == '+') {
+      return $scope.na() + $scope.nb();
+    }
+    if($scope.operation == '-') {
+      return $scope.a - $scope.b;
+    }
+    if($scope.operation == '*') {
+      return $scope.a * $scope.b;
+    }
+    if($scope.operation == '/') {
+      return $scope.a / $scope.b;
+    }
+    return "undef";
+  }
+}
