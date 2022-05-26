@@ -1,172 +1,233 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPEhtml>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>box practice</title>
-    <style>
-        #first ,#second,#third{
-            background-color:royalblue;
-            border-radius: 10px;
-            margin: 80px;
-            margin-right: 0%;
-            width: 400px;
-            height: 600px;
-            box-shadow:10px 10px lightgray;
-            float: left;
-            
+<style>
+	div.a{
+		border-style: 4px solid dashed black;
+		background: lightblue;	
+		font-size: 20px;
+		padding: 50px;
+		margin: 30px;
+		border-radius: 4px;
+		}
+	 body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        #second {
-            
-            background-color:tomato;
-           
-        }
-        #third {
-           
-            background-color:dodgerblue;
-           
-        }
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 100%;
-            margin: 50px 100px;
-            margin-bottom: 0px;
-        }
-        p {
-            padding: 20px;
-            padding-left: 20px;
-            
-        }
-        .Name{
-            padding: 0px 135px;
-            margin: 0px;
-        }
-        .firstLine{
-            padding-top: 0px;
-            padding-bottom: 0px;
-           font-size:larger;
-           font-weight: bold;
-           margin-bottom: 0px;
-            
-        }
-        table{
-            padding: 20px;
-            
-        }
-        td{
-            padding: 10px;
-        }
-    </style>
+        
+
+</style>
+<script>
+
+	function validate()
+	{
+		var cn=document.getElementById("cn").value;
+		var l=document.getElementById("cn").value.length;
+		var c=cn.toString().slice(0,2);
+		var v=cn.toString().slice(0,1);
+		if(c==34 || c==37)
+		{
+			if(l!=15)
+			{
+				alert('failure!! Card issuer: American Express');
+			}
+			else
+			{
+				alert('success!! Card issuer: American Express');
+			}
+		}
+		else if(c==60 || c==65 || c==81 || c==82)
+		{
+			if(l!=16)
+			{
+				alert('failure!! Card issuer: Rupay');
+			}
+			else
+			{
+				alert('success!! Card issuer: Rupay');
+			}
+		}
+		else if(c>=51 && c<=55)
+		{
+			if(l!=16)
+			{
+				alert('failure!! Card issuer: Mastercard');
+			}
+			else
+			{
+				alert('success!! Card issuer: Mastercard');
+			}
+		}
+		else if(v==4)
+		{
+			if(l!=13 && l!=16)
+			{
+				alert('failure!! Card issuer: Visa');
+			}
+			else
+			{
+				alert('success!! Card issuer: Visa');
+			}
+		}
+		else
+		{
+			alert('failure');
+		}
+
+		
+	}
+
+
+</script>
 </head>
 <body>
-<article id="first">
-    <img src="../IMAGES/vk.jpg" alt="virat kohli image">
-    <p class="Name">Virat Kohli</p>
-    <p class="firstLine">PERSONAL INFORMATION</p>
-    <table>
-    <tr>
-        <td>Born</td>
-        <td>November 05,1988(32 years)</td>
-    </tr>
-    <tr>
-        <td>Birth Place</td>
-        <td>Delhi</td>
-    </tr>
-    <tr>
-        <td>Nickname</td>
-        <td>Kohli</td>
-    </tr>
-    <tr>
-        <td>Height</td>
-        <td>5ft 9in</td>
-    </tr>
-    <tr>
-        <td>Role</td>
-        <td>Batsman</td>
-    </tr>
-    <tr>
-        <td>Batting Style</td>
-        <td>Right Handed Bat</td>
-    </tr>
-    <tr>
-        <td>Bowling style</td>
-        <td>Right-Arm medium</td>
-    </tr>
-</table>
+<div class="a">	
+	<h1 style="color: red;font-size: 30px">User details</h1>
+	<form>
+		<input type="text" id="name" placeholder="name" name="name" required/><br>
+		<input type="number" placeholder="age" name="age" required/><br>
+		<label id="gender">Gender:</label>
+		<select id="gender">
+			<option id="male">male</option>			
+			<option id="female">female</option>
+		</select><br>
+		<input type="email" id="email" placeholder="email" name="email" required/><br>
+		<h1 style="color: red;font-size: 30px">Shipping details</h1>
+		<input type="text" id="address" placeholder="address" name="address" required/><br>
+		<input type="text" id="city" placeholder="city" name="city" required/><br>
+		<input type="text" id="state" placeholder="state" name="state" required/><br>
+		<br><br>
+		Select payment method:<br>
+		<input type="radio" id="cod" name="cod"/>
+		<label for="cod">COD</label>
+		<input type="radio" id="card" name="card"/>
+		<label for="card">Card</label>
+		
 
-</article>
-<article id="second">
-<img src="../IMAGES/dhoni.jfif" alt="dhoni image">
-<p class="Name">  MS Dhoni</p>
-<p class="firstLine">PERSONAL INFORMATION</p>
-    <table>
-    <tr>
-        <td>Born</td>
-        <td>November 05,1981(39 years)</td>
-    </tr>
-    <tr>
-        <td>Birth Place</td>
-        <td>Ranchi,Bihar</td>
-    </tr>
-    <tr>
-        <td>Nickname</td>
-        <td>Dhoni</td>
-    </tr>
-    <tr>
-        <td>Height</td>
-        <td>5ft 11in</td>
-    </tr>
-    <tr>
-        <td>Role</td>
-        <td>WK-Batsman</td>
-    </tr>
-    <tr>
-        <td>Batting Style</td>
-        <td>Right Handed Bat</td>
-    </tr>
-    <tr>
-        <td>Bowling style</td>
-        <td>Right-Arm medium</td>
-    </tr>
-</table>
-</article>
 
-<article id="third">
-<img src="../IMAGES/yr.jpg" alt="yuvraj image">
-<p class="Name">Yuvraj Singh</p>
-<p class="firstLine">PERSONAL INFORMATION</p>
-    <table>
-    <tr>
-        <td>Born</td>
-        <td>December 12,1981(39 years)</td>
-    </tr>
-    <tr>
-        <td>Birth Place</td>
-        <td>Chandigarh</td>
-    </tr>
-    <tr>
-        <td>Nickname</td>
-        <td>Yuvraj</td>
-    </tr>
-    <tr>
-        <td>Height</td>
-        <td>6ft 2in</td>
-    </tr>
-    <tr>
-        <td>Role</td>
-        <td>Batting Allrounder</td>
-    </tr>
-    <tr>
-        <td>Batting Style</td>
-        <td>Left Handed Bat</td>
-    </tr>
-    <tr>
-        <td>Bowling style</td>
-        <td>Left-Arm orthodox</td>
-    </tr>
-</table>
-</article>
+		<h1 style="color: red;font-size: 30px">Card details</h1>
+		<input type="text" placeholder="card number" id="cn" name="cn" pattern="\d*" maxlength="16" required/><br>
+		<input type="password" placeholder="cvv" name="cvv" maxlength="3" required/><br>
+		<label id="Cardtype">Card type:</label>
+		<select id="Cardtype">
+			<option id="Credit">Credit</option>			
+			<option id="Debit">Debit</option>
+		</select><br><br><br>
+		<input type="submit" style="display: flex; color: white; background: red; border-radius: 2px; align: center;" onclick="validate()"/>
+		
+	</form>
+</div>
 </body>
 </html>
+
+
+
+<!--  -->
+
+
+<!DOCTYPEhtml>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+<script>
+var app=angular.module('myapp',[]);
+app.controller('controller',function($scope){
+	$scope.user='';
+	$scope.password='';
+	$scope.u=/^[a-z_]*$/;
+	$scope.p=/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.\W).*$/;
+});
+
+</script>
+</head>
+<body>
+<form name="myform" ng-app="myapp" ng-controller="controller"  novalidate>
+
+   <h1>Validation</h1>
+	
+		<input type="text" placeholder="username" id="user" name="user" ng-model="user" ng-pattern="u" required>
+		<span style="color: red;" ng-show="myform.user.$dirty && myform.user.$invalid">
+		<span ng-show="myform.user.$error.required">username required</span>
+		<span ng-show="myform.user.$error.pattern">invalid username</span>
+		</span>
+
+	<br><br>
+	
+		<input type="text" placeholder="password" id="password" name="password" ng-model="password" ng-pattern="p" required>
+		<span style="color: red;" ng-show="myform.password.$dirty && myform.password.$invalid">
+		<span ng-show="myform.password.$error.required">password required</span>
+		<span ng-show="myform.password.$error.pattern">invalid password</span>
+		</span>
+	
+	<br><br>
+		<button ng-disabled="myform.user.$dirty && myform.user.$invalid ||  myform.password.$dirty && myform.password.$invalid" ngclick="submit()">submit</button>
+
+</form>
+</body>
+</html>
+
+<!--  -->
+
+<!Doctype Html>
+<html>
+<head>
+	<title>(1st) Lift Tracker</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="aapp" ng-controller="add"> 
+	<form name="lift_track" style="border-style: solid;width: 600px;height: 200px; margin: auto;margin-top: 150px;"  ng-submit="send()"> 
+	<br>
+	<br>
+	<label>Enter the type of lift:</label>
+	<input type="Text" name="type" ng-model="formdetails.lift_type"><br><br>
+	<label>Enter the number of weights (in Kgs): </label>
+	<input type="text" name="weight" ng-model="formdetails.no_of_weight"><br><br>
+	<label>Enter the Date:</label>
+	<input type="Date" name="date" ng-model="formdetails.Date_of_lift"><br><br>
+	<input type="button" name="submit" value="Add" ng-click="send()">
+	</form>
+
+
+	<table style="border-style: solid;">
+		<tr>
+			<th> Type of lift </th>
+			<th> Number of weights </th>
+			<th> Date </th>
+		</tr>
+	</table>
+</div>
+<script>
+	
+	var app=angular.module("aapp",[]);
+	app.controller("add",function($scope,$http){
+		$scope.formdetails={};
+		$scope.send=function(){
+			$http({method:"POST",url:"lift.php",data:$scope.formdetails});
+		}
+	});
+</script>
+</body>
+</html>
+
+
+
+<!--  -->
+
+<?php
+
+$conn =mysqli_connect("localhost","root","","weight_lift");
+$form_data=json_decode(file_get_contents("php://input"));
+
+$lift_type = mysqli_real_escape_string($conn,$form_data->lift_type);
+$no_of_weight = mysqli_real_escape_string($conn,$form_data->no_of_weight);
+$Date_of_lift = mysqli_real_escape_string($conn,$form_data->Date_of_lift);
+
+$sql="INSERT into lift_track VALUES ('$lift_type','$no_of_weight','$Date_of_lift')";
+mysqli_query($conn,$sql);
+
+?>
+<!--  -->
