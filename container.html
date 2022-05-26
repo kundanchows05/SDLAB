@@ -1,49 +1,146 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
-    <title>containers practice</title>
-    <style>
-        div{
-            float: left;
-            font-family: 'Courier Prime', monospace;
-        }
-      .highlight {
-        background-color: gold;
-        width: 500px;
-        padding: 10px;
-      }
-      .highlight2 {
-        background-color: chocolate;
-        width: 500px;
-        padding: 10px;
-        
-      }
-      span {
-        background-color: darkolivegreen;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="highlight">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vitae
-        provident odit, velit magni animi repellat modi error eius culpa dolore
-        in autem dolores sint <span>earum inventore</span>  ipsa? Nam, mollitia, tenetur et
-        illo minima fugiat incidunt numquam repellendus recusandae perspiciatis
-        nihil odit asperiores nulla repellat non dicta quam quae ea.
-      </p>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <form ng-submit="add()">
+            <input type="text" name="name " ng-model="nitem.name">
+            <input type="number" name="cost" ng-model="nitem.cost">
+            <input type="submit" value="ädd">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>COST</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in item">
+                    <td>{{i.name}}</td>
+                    <td>{{i.cost}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+        <BR>
+        <BR>
+        <BR>
+        <div ng-model="revenue">
+            REVENUE IS {{revenue}}
+        </div>
+
     </div>
-    <div class="highlight2">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus vitae
-        provident odit, velit magni animi repellat modi error eius culpa dolore
-        in autem dolores sint   ipsa? Nam, mollitia, tenetur et
-        illo minima fugiat incidunt numquam repellendus recusandae perspiciatis
-        nihil odit asperiores nulla repellat non dicta quam quae ea.
-      </p>
-    </div>
-  </body>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function($scope) {
+            $scope.revenue = 0;
+            $scope.add = function() {
+                $scope.revenue = $scope.revenue + (0.5 * ($scope.nitem.cost));
+                $scope.item.push({
+                    name: $scope.nitem.name,
+                    cost: $scope.nitem.cost
+
+                })
+
+            };
+
+
+            $scope.item = [{}];
+
+
+        });
+    </script>
+</body>
+
 </html>
+      
+      
+      
+<!--        -->
+      
+      
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <form ng-submit="add()">
+
+
+            <input type="text" ng-model="new_item.name">
+            <input type="submit" name="add" value="ENTER NEW ITEMS TO BE ADDED" ADD>
+
+        </form>
+        <br><br><br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ITEMS TO BE BOUGHT</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in checklist">
+                    <td>
+                        <label for="food1" ng-hide="check"> {{i.name}}</label> <input type="checkbox" ng-model="check" ng-hide="check">
+
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+
+        <BR>
+        <BR>
+        <BR>
+
+
+    </div>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function($scope) {
+            $scope.checklist = [{
+                    name: "RICE"
+                }, {
+                    name: 'WHEAT'
+                }
+
+            ];
+
+            $scope.add = function() {
+                $scope.checklist.push({
+                    name: $scope.new_item.name
+
+                })
+
+            };
+
+
+            $scope.item = [{}];
+
+
+        });
+    </script>
+</body>
+
+</html>
+      
+      
+      
+      
+      
